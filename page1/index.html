@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +20,416 @@
     <!-- Page Title -->
     <title>HKO Construction Sdn. Bhd.</title>
 
-    <!-- Link to CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Stylesheet -->
+    <style>
+/* ============================================================
+   HKO Construction Sdn. Bhd. — Stylesheet
+   Design concept: a site-drawing / spec-sheet aesthetic —
+   concrete tones, structural steel blue, safety-signage amber,
+   hairline rules and corner-bracket framing borrowed from
+   architectural drawings and CIDB spec sheets.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+    --ink: #1E231F;
+    --ink-soft: #4B4F49;
+    --paper: #EDEAE2;
+    --panel: #E0DBCC;
+    --steel: #435B67;
+    --safety: #EFA71A;
+    --rust: #A8481F;
+    --line: #B6AE9C;
+    --line-soft: #D3CDBD;
+
+    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    --content-width: 46rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--steel);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+}
+
+h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.02;
+    margin: 0;
+    color: var(--ink);
+}
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
+
+header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2.6rem 1.5rem 2rem;
+    position: relative;
+    border-bottom: 6px solid var(--safety);
+}
+
+header::before {
+    /* survey-tick strip along the very top */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--steel) 0 2px,
+        transparent 2px 22px
+    );
+}
+
+.header-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.mark {
+    flex: none;
+    width: 34px;
+    height: 34px;
+}
+
+.mark path,
+.mark rect {
+    fill: var(--safety);
+}
+
+header > .header-inner > p {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--line-soft);
+    margin: 0.5rem 0 0;
+    letter-spacing: 0.02em;
+}
+
+nav {
+    margin-top: 1.6rem;
+    display: flex;
+    gap: 1.6rem;
+    border-top: 1px solid #3a4138;
+    padding-top: 1rem;
+}
+
+nav a {
+    color: var(--line-soft);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: var(--paper);
+}
+
+nav a[aria-current="page"] {
+    color: var(--safety);
+    border-bottom-color: var(--safety);
+}
+
+/* ---------------------------------------------------------
+   Main / sections
+   --------------------------------------------------------- */
+
+main {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section > h2 {
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    margin-bottom: 1.1rem;
+}
+
+section > p {
+    max-width: 42rem;
+    color: var(--ink-soft);
+}
+
+section > p + p {
+    margin-top: 1rem;
+}
+
+/* framed media — corner-bracket treatment, like a marked-up
+   drawing detail */
+.framed {
+    position: relative;
+    padding: 10px;
+    margin: 1.4rem 0 1.6rem;
+    border: 1px solid var(--line);
+}
+
+.framed::before,
+.framed::after,
+.framed > img::before {
+    content: "";
+}
+
+.framed::before {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 16px;
+    height: 16px;
+    border-top: 3px solid var(--safety);
+    border-left: 3px solid var(--safety);
+}
+
+.framed::after {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 3px solid var(--safety);
+    border-right: 3px solid var(--safety);
+}
+
+.framed img,
+.framed iframe {
+    width: 100%;
+    border: 0;
+}
+
+.framed figcaption,
+.frame-caption {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-top: 0.6rem;
+    padding: 0 2px;
+}
+
+/* ---------------------------------------------------------
+   Spec-sheet table (Company Information / Specializations)
+   --------------------------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 0.94rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+tr:last-child th,
+tr:last-child td {
+    border-bottom: none;
+}
+
+th {
+    color: var(--ink-soft);
+    font-weight: 500;
+    width: 40%;
+    border-right: 1px solid var(--line-soft);
+}
+
+/* header row on the services spec table */
+table tr:first-child th {
+    background: var(--ink);
+    color: var(--paper);
+    border-right: 1px solid #3a4138;
+    width: auto;
+}
+
+/* ---------------------------------------------------------
+   Specialization list (page 1)
+   --------------------------------------------------------- */
+
+.spec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.spec-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--panel);
+    border-left: 3px solid var(--steel);
+}
+
+.spec-list code {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--rust);
+    background: none;
+    white-space: nowrap;
+}
+
+.spec-list strong {
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   Numbered service blocks (page 2)
+   --------------------------------------------------------- */
+
+.service-block h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+}
+
+.service-block .num {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--rust);
+}
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+button {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--safety);
+    border: none;
+    padding: 0.85rem 1.6rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #d99614;
+}
+
+a:has(> button) {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+footer {
+    background: var(--ink);
+    color: var(--line-soft);
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+}
+
+footer > div {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+footer p {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    margin: 0.3rem 0;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    header {
+        padding: 2rem 1.2rem 1.6rem;
+    }
+
+    nav {
+        gap: 1.1rem;
+        flex-wrap: wrap;
+    }
+
+    th, td {
+        padding: 0.6rem 0.75rem;
+    }
+
+    th {
+        width: 45%;
+    }
+}
+</style>
 
 </head>
 
@@ -32,18 +439,28 @@
     <!-- Header -->
     <header>
 
-        <h1>HKO Construction Sdn. Bhd.</h1>
+        <div class="header-inner">
 
-        <p>Building Malaysia's Future</p>
+            <h1>
+                <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 21h20v1.4H2z" />
+                    <path d="M4 21V10.6l3.2-1.9v3l3-1.8v3l3-1.8v3l3-1.8v5.7h2.4V9.8L4 21z" />
+                </svg>
+                HKO Construction Sdn. Bhd.
+            </h1>
 
-        <!-- Navigation -->
-        <nav>
+            <p>Selangor, Malaysia &nbsp;/&nbsp; CIDB Grade G5 &nbsp;/&nbsp; Registered since 25 Jul 2012</p>
 
-            <a href="index.html">Home</a>
+            <!-- Navigation -->
+            <nav>
 
-            <a href="../page2/index.html">Services</a>
+                <a href="index.html" aria-current="page">Home</a>
 
-        </nav>
+                <a href="../page2/index.html">Services</a>
+
+            </nav>
+
+        </div>
 
     </header>
 
@@ -56,10 +473,12 @@
 
             <h2>About HKO Construction</h2>
 
-            <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                alt="Construction site"
-                width="700">
+            <figure class="framed">
+                <img
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+                    alt="Construction site">
+                <figcaption class="frame-caption">Site works — structural phase</figcaption>
+            </figure>
 
             <p>
                 HKO Construction Sdn. Bhd. is a construction company based in
@@ -143,21 +562,21 @@
 
             <h2>Areas of Specialization</h2>
 
-            <ul>
+            <ul class="spec-list">
 
                 <li>
+                    <code>B04</code>
                     <strong>Building Construction</strong>
-                    – B04
                 </li>
 
                 <li>
+                    <code>CE21</code>
                     <strong>Civil Engineering</strong>
-                    – CE21
                 </li>
 
                 <li>
-                    <strong>Mechanical & Electrical</strong>
-                    – M15
+                    <code>M15</code>
+                    <strong>Mechanical &amp; Electrical</strong>
                 </li>
 
             </ul>
@@ -176,15 +595,16 @@
                 are developed.
             </p>
 
-            <iframe
-                width="700"
-                height="400"
-                src="https://www.youtube.com/embed/UB1O30fR-EE"
-                title="Construction Industry Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <div class="framed">
+                <iframe
+                    height="400"
+                    src="https://www.youtube.com/embed/UB1O30fR-EE"
+                    title="Construction Industry Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
         </section>
 
@@ -199,14 +619,15 @@
                 The map below shows the Selangor area.
             </p>
 
-            <iframe
-                src="https://www.google.com/maps?q=Selangor,Malaysia&output=embed"
-                width="700"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
+            <div class="framed">
+                <iframe
+                    src="https://www.google.com/maps?q=Selangor,Malaysia&output=embed"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
 
         </section>
 
@@ -222,7 +643,7 @@
             </p>
 
             <a href="../page2/index.html">
-                <button>View Services</button>
+                <button>View services</button>
             </a>
 
         </section>
@@ -233,14 +654,18 @@
     <!-- Footer -->
     <footer>
 
-        <p>
-            © 2026 HKO Construction Sdn. Bhd. Introduction Website
-        </p>
+        <div>
 
-        <p>
-            Information source:
-            MyDigital Contractor / CIDB contractor information
-        </p>
+            <p>
+                © 2026 HKO Construction Sdn. Bhd. Introduction Website
+            </p>
+
+            <p>
+                Information source:
+                MyDigital Contractor / CIDB contractor information
+            </p>
+
+        </div>
 
     </footer>
 
@@ -248,4 +673,3 @@
 </body>
 
 </html>
-```
