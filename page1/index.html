@@ -1,251 +1,265 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
+```css
+/* ================================
+   HKO CONSTRUCTION
+   Main Website Style
+================================ */
+
+/* ---------- Basic Settings ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
+    line-height: 1.8;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.78),
+        rgba(0, 0, 0, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+    center / cover;
+
+    color: white;
+    text-align: center;
+    padding: 100px 20px 80px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 20px;
+    color: #f0a500;
+    margin: 0 0 30px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border: 1px solid #f0a500;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #f0a500;
+    color: #111111;
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+
+/* ---------- Sections ---------- */
+
+section {
+    background-color: white;
+    margin-bottom: 35px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #222222;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid #f0a500;
+}
 
-<head>
+
+/* ---------- Images ---------- */
+
+section img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: 380px;
+    object-fit: cover;
+    margin: 25px auto;
+    border-radius: 6px;
+}
+
 
-    <!-- Document Type -->
-    <meta charset="UTF-8">
+/* ---------- Paragraph ---------- */
 
-    <!-- Metadata -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+section p {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
 
-    <meta name="description"
-        content="Introduction to HKO Construction Sdn. Bhd., a construction company based in Selangor, Malaysia.">
 
-    <meta name="keywords"
-        content="HKO Construction, construction, Malaysia, Selangor, CIDB, building, civil engineering">
+/* ---------- Company Information Table ---------- */
 
-    <meta name="author" content="Your Name">
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-    <!-- Page Title -->
-    <title>HKO Construction Sdn. Bhd.</title>
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
 
-    <!-- Link to CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+th {
+    width: 35%;
+    background-color: #222222;
+    color: white;
+}
 
-</head>
+tr:hover {
+    background-color: #fff8e8;
+}
 
 
-<body>
+/* ---------- Specialization List ---------- */
 
-    <!-- Header -->
-    <header>
+ul {
+    padding-left: 0;
+    list-style: none;
+}
 
-        <h1>HKO Construction Sdn. Bhd.</h1>
-
-        <p>Building Malaysia's Future</p>
-
-        <!-- Navigation -->
-        <nav>
-
-            <a href="index.html">Home</a>
-
-            <a href="../page2/index.html">Services</a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- Main Content -->
-    <main>
-
-        <!-- Company Introduction -->
-        <section>
-
-            <h2>About HKO Construction</h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                alt="Construction site"
-                width="700">
-
-            <p>
-                HKO Construction Sdn. Bhd. is a construction company based in
-                Selangor, Malaysia. According to publicly available contractor
-                information, the company has been registered with the Construction
-                Industry Development Board (CIDB) since 25 July 2012 and is
-                registered as a Grade G5 contractor.
-            </p>
-
-            <p>
-                The company provides construction-related services covering
-                building construction, civil engineering, and mechanical and
-                electrical work. Its building specialization includes B04,
-                which refers to building construction work. In civil engineering,
-                the company is registered under CE21 for civil engineering
-                construction. Its mechanical and electrical specialization
-                includes M15 for various mechanical equipment.
-            </p>
-
-            <p>
-                Construction companies play an important role in Malaysia's
-                economic and infrastructure development. Construction projects
-                require careful planning, skilled workers, appropriate materials,
-                safety management and quality control. A reliable contractor
-                therefore needs to coordinate different areas of work to ensure
-                that projects can be completed properly.
-            </p>
-
-            <p>
-                HKO Construction represents one of the many contractors
-                participating in Malaysia's construction industry. Its CIDB
-                registration and G5 classification provide information about
-                its registered status and areas of specialization. Through
-                construction and engineering services, companies such as HKO
-                Construction contribute to the development of buildings and
-                infrastructure in Selangor and surrounding areas.
-            </p>
-
-        </section>
-
-
-        <!-- Company Information -->
-        <section>
-
-            <h2>Company Information</h2>
-
-            <table>
-
-                <tr>
-                    <th>Company Name</th>
-                    <td>HKO Construction Sdn. Bhd.</td>
-                </tr>
-
-                <tr>
-                    <th>Location</th>
-                    <td>Selangor, Malaysia</td>
-                </tr>
-
-                <tr>
-                    <th>CIDB Grade</th>
-                    <td>G5</td>
-                </tr>
-
-                <tr>
-                    <th>Member Since</th>
-                    <td>25 July 2012</td>
-                </tr>
-
-                <tr>
-                    <th>PPK Registration No.</th>
-                    <td>0120120725-WP144354</td>
-                </tr>
-
-            </table>
-
-        </section>
-
-
-        <!-- Areas of Specialization -->
-        <section>
-
-            <h2>Areas of Specialization</h2>
-
-            <ul>
-
-                <li>
-                    <strong>Building Construction</strong>
-                    – B04
-                </li>
-
-                <li>
-                    <strong>Civil Engineering</strong>
-                    – CE21
-                </li>
-
-                <li>
-                    <strong>Mechanical & Electrical</strong>
-                    – M15
-                </li>
-
-            </ul>
-
-        </section>
-
-
-        <!-- Embedded YouTube Video -->
-        <section>
-
-            <h2>Construction Industry Video</h2>
-
-            <p>
-                The following video introduces the general construction
-                process and provides an example of how construction projects
-                are developed.
-            </p>
-
-            <iframe
-                width="700"
-                height="400"
-                src="https://www.youtube.com/embed/UB1O30fR-EE"
-                title="Construction Industry Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-
-        </section>
-
-
-        <!-- Google Map -->
-        <section>
-
-            <h2>Location</h2>
-
-            <p>
-                HKO Construction Sdn. Bhd. is registered in Selangor, Malaysia.
-                The map below shows the Selangor area.
-            </p>
-
-            <iframe
-                src="https://www.google.com/maps?q=Selangor,Malaysia&output=embed"
-                width="700"
-                height="460"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
-
-        </section>
-
-
-        <!-- Link to Second Page -->
-        <section>
-
-            <h2>Explore More</h2>
-
-            <p>
-                Learn more about construction services and areas of work
-                on our second webpage.
-            </p>
-
-            <a href="../page2/index.html">
-                <button>View Services</button>
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <p>
-            © 2026 HKO Construction Sdn. Bhd. Introduction Website
-        </p>
-
-        <p>
-            Information source:
-            MyDigital Contractor / CIDB contractor information
-        </p>
-
-    </footer>
-
-
-</body>
-
-</html>
+li {
+    background-color: #f7f7f7;
+    margin: 12px 0;
+    padding: 15px 20px;
+    border-left: 4px solid #f0a500;
+    border-radius: 4px;
+}
+
+
+/* ---------- Embedded Content ---------- */
+
+iframe {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 25px auto;
+    border-radius: 6px;
+}
+
+
+/* ---------- Buttons ---------- */
+
+button {
+    background-color: #f0a500;
+    color: #111111;
+    border: none;
+    padding: 13px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #222222;
+    color: white;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    background-color: #181818;
+    color: #bbbbbb;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+/* ---------- Mobile Responsive ---------- */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 70px 15px 60px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    main {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section img {
+        height: 250px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 200px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
 ```
